@@ -34,7 +34,7 @@ describe('moduleLoader.js', function () {
       var loader = getModuleLoader();
       module = loader.load();
 
-      assert.strictEqual('module-template', module.name);
+      assert.strictEqual('module-template', module.getName());
     });
 
     it('should pass additional parameters to args array', function () {
@@ -46,7 +46,7 @@ describe('moduleLoader.js', function () {
       var loader = getModuleLoader();
       var module = loader.load();
 
-      assert.deepEqual(['foo', 'bar', 'baz'], module.args);
+      assert.deepEqual(['foo', 'bar', 'baz'], module.getArgs());
     });
 
     it('should bind the args to the init function', function () {

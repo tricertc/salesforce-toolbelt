@@ -5,22 +5,22 @@ describe('Module.js', function () {
   describe('#constructor()', function () {
     it('should assign a default name', function () {
       var module = new Module();
-      assert.strictEqual('anonymous', module.name);
+      assert.strictEqual('anonymous', module.getName());
     });
 
     it('should assign a default args array', function () {
       var module = new Module();
-      assert.deepEqual([], module.args);
+      assert.deepEqual([], module.getArgs());
     });
 
     it('should accept an optional name', function () {
-      var module = new Module({ name: 'foo' });
-      assert.strictEqual('foo', module.name);
+      var module = new Module(null, { name: 'foo' });
+      assert.strictEqual('foo', module.getName());
     });
 
     it('should accept an optional args array', function () {
-      var module = new Module({ args: [ 'foo', 'bar', 'baz'] });
-      assert.deepEqual(['foo', 'bar', 'baz'], module.args);
+      var module = new Module(null, { args: [ 'foo', 'bar', 'baz'] });
+      assert.deepEqual(['foo', 'bar', 'baz'], module.getArgs());
     });
   });
 
