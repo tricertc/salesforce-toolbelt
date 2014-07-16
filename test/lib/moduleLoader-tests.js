@@ -48,8 +48,21 @@ describe('moduleLoader.js', function () {
 
       assert.deepEqual(['foo', 'bar', 'baz'], module.args);
     });
-  });
 
+    it('should bind the args to the init function', function () {
+      process.argv[2] = 'module-template';
+      process.argv[3] = 'foo';
+      process.argv[4] = 'bar';
+      process.argv[5] = 'baz';
+
+      var loader = getModuleLoader();
+      var module = loader.load();
+
+      var result = module.init();
+
+      assert.strictEqual('foobarbaz', result);
+    });
+  });
 });
 
 /**
