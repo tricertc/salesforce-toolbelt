@@ -26,6 +26,12 @@ describe('config.js', function () {
       var config = require(modulePath)();
       assert.equal(true, !!config);
     });
+
+    it('should set the name property on the configuration file', function () {
+      process.env.NODE_ENV = 'config.template';
+      var config = require(modulePath)();
+      assert.equal('config.template', config.name);
+    });
   });
 
 });
