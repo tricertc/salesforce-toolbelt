@@ -23,4 +23,39 @@ describe('Module.js', function () {
       assert.deepEqual(['foo', 'bar', 'baz'], module.args);
     });
   });
+
+  describe('#setInitFunc()', function () {
+    it('should have a setInitFunc() method', function () {
+      assert.equal(true, Module.prototype.hasOwnProperty('setInitFunc'));
+    });
+
+    it('should throw exception if argument is not a function', function () {
+      var module = new Module();
+      assert.throws(function () {
+        module.setInitFunc('foo');
+      }, /Module#setInitFunc\(\) requires a function/);
+    });
+
+    it('should set the init function', function () {
+      var module = new Module();
+      module.setInitFunc(function () {});
+      assert.equal(true, !!module.init);
+      assert.equal(true, typeof module.init === 'function');
+    });
+  });
+
+  describe('#init()', function () {
+    it('should throw exception if not set', function () {
+      var module = new Module();
+      assert.throws(function () {
+        module.init();
+      }, /Module init function has not been set/);
+    });
+
+    it('should execute the designated init function', function () {
+      var module = new Module();
+      module.setInitFunc(function () { return 'foo'; });
+      assert.strictEqual('foo', module.init());
+    });
+  });
 });
