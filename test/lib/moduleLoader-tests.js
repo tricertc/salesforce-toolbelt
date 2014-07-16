@@ -62,6 +62,15 @@ describe('moduleLoader.js', function () {
 
       assert.strictEqual('foobarbaz', result);
     });
+
+    it('should pass a configuration to the module', function () {
+      process.env.NODE_ENV = 'config.template';
+
+      var loader = getModuleLoader();
+      var module = loader.load();
+
+      assert.strictEqual('config.template', module.getConfig().name);
+    });
   });
 });
 
