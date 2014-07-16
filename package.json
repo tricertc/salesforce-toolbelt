@@ -1,0 +1,23 @@
+{
+  "name": "salesforce-toolbelt",
+  "version": "0.0.0",
+  "description": "salesforce-toolbelt ===================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tricertc/salesforce-toolbelt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tricertc/salesforce-toolbelt/issues"
+  },
+  "homepage": "https://github.com/tricertc/salesforce-toolbelt",
+  "devDependencies": {
+    "assert": "^1.1.1",
+    "mocha": "^1.20.1"
+  }
+}
