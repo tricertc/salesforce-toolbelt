@@ -19,5 +19,9 @@
   "devDependencies": {
     "assert": "^1.1.1",
     "mocha": "^1.20.1"
+  },
+  "dependencies": {
+    "jsforce": "git://github.com/jsforce/jsforce.git",
+    "async": "^0.9.0"
   }
 }
