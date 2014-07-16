@@ -5,7 +5,7 @@ var path = require('path');
 if (!process.env.NODE_ENV)
   throw Error('NODE_ENV is not defined');
 
-module.exports = function () {
+exports.load = function () {
   var environment = process.env.NODE_ENV.toLowerCase();
   var configDir = path.join(__dirname, 'env');
   var config;
