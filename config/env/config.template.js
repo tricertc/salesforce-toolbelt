@@ -12,6 +12,12 @@ module.exports = {
     password: '',
     securityToken: '',
 
+    maxRequest: 500,
+
+    headers: {
+      'SForce-Auto-Assign': 'FALSE'
+    },
+
     getTokenizedPassword: function () {
       return this.password + this.securityToken;
     }

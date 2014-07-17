@@ -27,3 +27,5 @@ node_modules
 # custom
 config/env/
 !config/env/config.template.js
+
+.idea
