@@ -32,7 +32,7 @@ describe('moduleLoader.js', function () {
       process.argv[2] = 'module-template';
 
       var loader = getModuleLoader();
-      module = loader.load();
+      var module = loader.load();
 
       assert.strictEqual('module-template', module.getName());
     });

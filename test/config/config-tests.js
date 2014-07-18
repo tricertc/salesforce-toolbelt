@@ -15,7 +15,7 @@ describe('config.js', function () {
     it('should throw exception if no matching configuration', function () {
       process.env.NODE_ENV = 'not-found';
       assert.throws(function () {
-        var config = require('../../config/config').load();
+        require('../../config/config').load();
       }, /No configuration found for 'not-found'/);
     });
 

@@ -32,6 +32,7 @@ describe('Module.js', function () {
     it('should throw exception if argument is not a function', function () {
       var module = new Module();
       assert.throws(function () {
+        //noinspection JSCheckFunctionSignatures
         module.setInitFunc('foo');
       }, /Module#setInitFunc\(\) requires a function/);
     });
