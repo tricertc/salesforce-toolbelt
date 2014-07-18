@@ -42,6 +42,7 @@ describe('moduleLoader.js', function () {
       process.argv[3] = 'foo';
       process.argv[4] = 'bar';
       process.argv[5] = 'baz';
+      process.argv.splice(6);
 
       var loader = getModuleLoader();
       var module = loader.load();
